@@ -6,11 +6,11 @@ const Customers = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([]);
     const [params, setParams] = useState({
-        name: null,
-        age: null,
-        gender: null,
-        city: null,
-        modifier: null
+        name: "",
+        age: "",
+        gender: "",
+        city: "",
+        modifier: "",
     });
 
     useEffect(() => {
@@ -24,7 +24,6 @@ const Customers = () => {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    console.log(result);
                     setItems(result);
                     setIsLoading(false);
                 },
@@ -46,7 +45,6 @@ const Customers = () => {
         if (query) {
             query = query.slice(0, -1);
         }
-        console.log(query);
         getResults(query);
     };
 
@@ -102,7 +100,7 @@ const Customers = () => {
                                             }}
                                             value={params.gender}
                                         >
-                                            <option>Sexo</option>
+                                            <option value="">Sexo</option>
                                             <option value="F">Feminino</option>
                                             <option value="M">Masculino</option>
                                         </select>
@@ -126,13 +124,20 @@ const Customers = () => {
                                         <select
                                             className="form-control"
                                             onChange={(e) => {
-                                                handleFieldChange(e, "modifier");
+                                                handleFieldChange(
+                                                    e,
+                                                    "modifier"
+                                                );
                                             }}
                                             value={params.modifier}
                                         >
-                                            <option>Modificador</option>
+                                            <option value="">
+                                                Modificador
+                                            </option>
                                             <option value="OR">OR (ou)</option>
-                                            <option value="AND">AND (and)</option>
+                                            <option value="AND">
+                                                AND (and)
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -170,7 +175,7 @@ const Customers = () => {
                                 </tbody>
                             </table>
                         )}
-                        {!items.length > 0 && (<p>Nenhum cliente encontrado.</p>)}
+                        {!items.length > 0 && <p>Nenhum cliente encontrado.</p>}
                     </div>
                 </div>
             )}
