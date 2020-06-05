@@ -5,6 +5,7 @@ import { AppContext } from "../../contexts/AppContext";
 import TopBar from "../shared/topbar/TopBar";
 import Sidebar from "../shared/sidebar/Sidebar";
 import Customers from "../pages/Customers/Customers";
+import Customer from "../pages/Customers/Customer";
 import Orders from "../pages/Orders/Orders";
 import Products from "../pages/Products/Products";
 
@@ -29,6 +30,7 @@ const Dashboard = () => {
                 <main>
                     <Switch>
                         <Route exact path={`${url}/clientes`} component={Customers} />
+                        <Route exact path={`${url}/clientes/:id`} component={Customer} />
                         <Route exact path={`${url}/compras`} component={Orders} />
                         <Route exact path={`${url}/produtos`} component={Products} />
                     </Switch>

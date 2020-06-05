@@ -42,7 +42,7 @@ class CustomerController(ControllerBase):
     def get_by_id(self, id):
 
         try:
-            query = "MATCH (c:Customer) WHERE c.id = " + str(id) + " RETURN c"
+            query = "MATCH (c:Customer)-[r:BUY]->(p:Product) WHERE c.id = " + str(id) + " RETURN c, r, p"
             results = self.graph.run(query)
             return self.jsonify(results.data())
             

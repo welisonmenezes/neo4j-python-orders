@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useRouteMatch, Link } from "react-router-dom";
 import "./Customers.scss";
 import Loader from "../../shared/loader/Loader";
 
 const Customers = () => {
+    const { url } = useRouteMatch();
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([]);
     const [params, setParams] = useState({
@@ -160,6 +162,7 @@ const Customers = () => {
                                         <th>Idade</th>
                                         <th>Gênero</th>
                                         <th>Cidade</th>
+                                        <th>Ver</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -170,6 +173,11 @@ const Customers = () => {
                                             <td>{item.c.age}</td>
                                             <td>{item.c.gender}</td>
                                             <td>{item.c.city}</td>
+                                            <td>
+                                                <Link to={`${url}/${item.c.id}`}>
+                                                    Ver
+                                                </Link>
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
