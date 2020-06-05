@@ -1,6 +1,6 @@
 # Guideline Geral
 
-## Informaçãoes
+## Informações
 
 Eu desenvolvi com Flask e React, por isso os diretórios: 'frontend' e 'application'.
 
@@ -16,7 +16,7 @@ No diretório 'application', no arquivo 'app.py', na linha 15, você deverá inf
 
 ## Ambiente Virtual
 
-Caso deseje executar sua aplicação no ambiente virtual do Pyton, certifique-se de estar no diretório 'application' e execute os seguites comandos:
+Caso deseje executar sua aplicação em um ambiente virtual do Python, certifique-se de estar no diretório 'application' e execute os seguites comandos:
 
 > python -m venv venv  
 > cd venv/Scripts
@@ -30,7 +30,7 @@ Não é obrigatório mas é útil, pois você não instalará as dependências d
 
 Primeiro, certifique-se de estar no diretório 'application'.
 
-As dependências do projeto estão listadas no arquivo requirements.txt. Para instalá-las execute o seguinte comando:
+As dependências do projeto estão listadas no arquivo 'requirements.txt'. Para instalá-las execute o seguinte comando:
 
 > pip install -r requirements.txt
 
