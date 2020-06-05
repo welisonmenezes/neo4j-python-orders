@@ -1,0 +1,106 @@
+### CRIA OS CLIENTES (PODE CRIAR TODOS JUNTOS NUMA EXECUÇÃO SÓ)
+
+CREATE 
+(:Customer { name: 'Welison', id: 1, age: 33, city: 'Lages', gender: 'M' }), 
+(:Customer { name: 'Giovana', id: 2, age: 30, city: 'Lages', gender: 'F' }), 
+(:Customer { name: 'Gabriela', id: 3, age: 20, city: 'Caxias do Sul', gender: 'F' }), 
+(:Customer { name: 'Marcelo', id: 4, age: 19, city: 'Vacaria', gender: 'M' }), 
+(:Customer { name: 'Jovani', id: 5, age: 70, city: 'Vacaria', gender: 'M' }), 
+(:Customer { name: 'Fernanda', id: 6, age: 22, city: 'Lages', gender: 'F' }), 
+(:Customer { name: 'Wilson', id: 7, age: 67, city: 'Teresópolis', gender: 'M' }), 
+(:Customer { name: 'Karol', id: 8, age: 15, city: 'Teresópolis', gender: 'F' }), 
+(:Customer { name: 'Débora', id: 9, age: 29, city: 'Estrela', gender: 'F' }), 
+(:Customer { name: 'José', id: 10, age: 44, city: 'Lages', gender: 'M' })
+
+
+
+### CRIA OS PRODUTOS (PODE CRIAR TODOS JUNTOS NUMA EXECUÇÃO SÓ)
+
+CREATE 
+(:Product { name: 'Caneta', id: 1 }), 
+(:Product { name: 'Caderno', id: 2 }), 
+(:Product { name: 'Lápis', id: 3 }), 
+(:Product { name: 'Sapato', id: 4 }), 
+(:Product { name: 'Meias', id: 5 }), 
+(:Product { name: 'Camisa', id: 6 }), 
+(:Product { name: 'Calça', id: 7 }), 
+(:Product { name: 'Celular', id: 8 }), 
+(:Product { name: 'Fones', id: 9 }), 
+(:Product { name: 'Perfume', id: 10 })
+
+
+
+### CRIA OS RELACIONAMENTOS (PODE CRIAR TUDOS JUNTOS NUMA EXECUÇÃO SÓ)
+
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 1 AND p.id = 10 CREATE (c)-[r:BUY { data: '2020-04-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 1 AND p.id = 3 CREATE (c)-[r:BUY { data: '2020-05-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 1 AND p.id = 1 CREATE (c)-[r:BUY { data: '2020-04-01' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 1 AND p.id = 5 CREATE (c)-[r:BUY { data: '2019-11-29' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 2 AND p.id = 4 CREATE (c)-[r:BUY { data: '2020-02-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 2 AND p.id = 7 CREATE (c)-[r:BUY { data: '2020-01-01' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 2 AND p.id = 9 CREATE (c)-[r:BUY { data: '2019-12-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 3 AND p.id = 1 CREATE (c)-[r:BUY { data: '2018-04-07' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 3 AND p.id = 3 CREATE (c)-[r:BUY { data: '2019-05-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 3 AND p.id = 5 CREATE (c)-[r:BUY { data: '2020-04-20' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 3 AND p.id = 7 CREATE (c)-[r:BUY { data: '2019-11-30' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 3 AND p.id = 9 CREATE (c)-[r:BUY { data: '2020-04-01' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 3 AND p.id = 2 CREATE (c)-[r:BUY { data: '2019-09-21' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 4 AND p.id = 1 CREATE (c)-[r:BUY { data: '2019-06-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 4 AND p.id = 3 CREATE (c)-[r:BUY { data: '2020-02-28' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 4 AND p.id = 6 CREATE (c)-[r:BUY { data: '2019-03-30' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 4 AND p.id = 8 CREATE (c)-[r:BUY { data: '2020-04-05' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 4 AND p.id = 10 CREATE (c)-[r:BUY { data: '2018-09-21' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 5 AND p.id = 4 CREATE (c)-[r:BUY { data: '2020-03-14' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 5 AND p.id = 8 CREATE (c)-[r:BUY { data: '2018-06-02' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 6 AND p.id = 1 CREATE (c)-[r:BUY { data: '2018-12-18' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 6 AND p.id = 2 CREATE (c)-[r:BUY { data: '2019-03-23' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 6 AND p.id = 4 CREATE (c)-[r:BUY { data: '2020-04-24' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 6 AND p.id = 5 CREATE (c)-[r:BUY { data: '2018-02-21' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 7 AND p.id = 7 CREATE (c)-[r:BUY { data: '2019-12-24' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 8 AND p.id = 2 CREATE (c)-[r:BUY { data: '2018-11-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 8 AND p.id = 4 CREATE (c)-[r:BUY { data: '2020-02-08' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 8 AND p.id = 6 CREATE (c)-[r:BUY { data: '2019-03-22' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 8 AND p.id = 8 CREATE (c)-[r:BUY { data: '2020-01-06' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 8 AND p.id = 10 CREATE (c)-[r:BUY { data: '2019-09-06' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 8 AND p.id = 3 CREATE (c)-[r:BUY { data: '2020-05-21' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 9 AND p.id = 6 CREATE (c)-[r:BUY { data: '2020-04-14' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 9 AND p.id = 8 CREATE (c)-[r:BUY { data: '2019-06-22' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 10 AND p.id = 10 CREATE (c)-[r:BUY { data: '2020-04-19' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 10 AND p.id = 1 CREATE (c)-[r:BUY { data: '2020-03-09' }]->(p)
+WITH NULL AS none
+MATCH (c:Customer),(p:Product) WHERE c.id = 10 AND p.id = 3 CREATE (c)-[r:BUY { data: '2019-12-10' }]->(p)
