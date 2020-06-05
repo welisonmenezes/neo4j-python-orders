@@ -9,9 +9,10 @@ class ControllerBase(Resource):
         self.jsonify = jsonify
         self.graph = graph
         self.modifier = 'OR'
+        self.is_first = True
 
 
-    def build_filter(self, label, value, is_first=True):
+    def build_filter(self, label, value):
 
         query = ''
         the_modifier = self.modifier
@@ -21,11 +22,17 @@ class ControllerBase(Resource):
         if type_of_value == '<class \'str\'>':
             is_string = True
 
+        try:
+            int(value)
+            is_string = False
+        except:
+            pass
+
         if self.modifier and self.modifier == 'AND':
             the_modifier = 'AND'
 
         if value:
-            if not is_first:
+            if not self.is_first:
                 query += the_modifier + ' '
             else:
                 query += 'WHERE '
@@ -35,6 +42,9 @@ class ControllerBase(Resource):
             else:
                 query += 'c.' + label + ' = ' + value + ' '
 
+            self.is_first = False
+
+        print(query)
         return query
 
 

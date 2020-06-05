@@ -27,9 +27,9 @@ class CustomerController(ControllerBase):
                 self.modifier = 'AND'
 
             query = self.build_filter('age', age)
-            query += self.build_filter('name', name, False)
-            query += self.build_filter('gender', gender, False)
-            query += self.build_filter('city', city, False)
+            query += self.build_filter('name', name)
+            query += self.build_filter('gender', gender)
+            query += self.build_filter('city', city)
 
             final_query = "MATCH (c:Customer) " + query + " RETURN c"
             results = self.graph.run(final_query)
